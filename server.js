@@ -1,9 +1,7 @@
-var sys = require('sys');
-var http = require('http');
-var server = http.createServer(
-    function (request, response) {
-        response.writeHead(200, {'Content-Type': 'text/plain'});
-        response.write('Hello World!!');
-        response.end();
-    }
-).listen(3000);
+'use strict'
+const HTTP = require('http');
+const PORT = process.env.PORT || 3001;
+HTTP.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('テスト成功！！！ \n');
+}).listen(PORT);
